@@ -1,0 +1,69 @@
+class student:
+    def __init__(self,a,b,c,d,e):
+        self.a=a
+        self.b=b
+        self.c=c
+        self.d=d
+        self.e=e
+    def display(self):
+      print(self.a,self.b,self.c,self.d,self.e)
+
+    def update(self,f,g,h,i,j):
+        self.f=f
+        self.g=g
+        self.h=h
+        self.i=i
+        self.j=j
+    def _del_(self):
+        print("deleted")
+       
+l=[]
+while(1):
+    print("enter 1 to insert students details")
+    print("enter 2 to display student details")
+    print("enter 3 to update student details")
+    print("enter 4 to delete the students details")
+    print("enter 5 to exit")
+    x=int(input())
+    if x==1:
+        a=int(input("enter students roll number"))
+        b=input("enter student name")
+        c=input("enter student gender")
+        d=input("enter student section")
+        e=input("enter student department")
+        stu=student(a,b,c,d,e)
+        print(stu)
+        l.append(stu)
+    if x==2:
+        print("student details")
+        for student in l:
+          student.display()
+        
+               
+    if x==3:
+        a=int(input("enter the student number to update the details"))
+        b=input("enter student name")
+        c=input("enter student gender")
+        d=input("enter student section")
+        e=input("enter student department")
+        c1=1
+        for obj in l:
+            if c1!=a:
+                c1=c1+1
+            else:
+                l.pop(a-1)
+                del obj
+        stu=student(a,b,c,d,e)
+        l.insert(a-1,stu)
+    if x==4:
+        x=int(input("enter number"))
+        for i in l:
+            print(i.a)
+            if i.a==x:
+                l.remove(i)
+            print(l)
+            
+                
+    if x==5:
+        break
+    # print(l)
